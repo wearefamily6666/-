@@ -1,0 +1,188 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+div#invitation {
+	width: 702px;
+	height: 800px;
+	border: 1px solid #000000;
+}
+
+div#invitation_left {
+	width: 320px;
+	height: 800px;
+	float: left;
+}
+
+div#invitation_left h3 {
+	max-width: 130px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+div#invitation_right {
+	width: 378px;
+	height: 800px;
+	float: left;
+}
+
+div#invitation_search {
+	margin-bottom: 20px;
+}
+
+div#invitation_search input {
+	width: 250px;
+	height: 50px;
+	border: 1px solid #000000;
+	border-radius: 5px;
+	margin-left: 20px;
+	font-size: 20px;
+}
+
+div#invitation_search img {
+	width: 30px;
+	height: 30px;
+	position: relative;
+	top: -40px;
+	left: 30px;
+}
+
+div#invitation_list img {
+	width: 50px;
+	height: 50px;
+	border: 1px solid #000000;
+	margin: 4px;
+}
+
+div#invitation_list {
+	max-height: 620px;
+	width: 320px;
+	height: 650px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+div#invitation_list ul:nth-of-type(1) li {
+	list-style: none;
+	font-family: "微软雅黑";
+	height: 60px;
+	width: 280px;
+	border: 1px solid #000000;
+	margin: 0 4px;
+}
+
+ul:nth-of-type(2) {
+	float: left;
+}
+
+div#invitation_list li img, .invitation_wraper {
+	float: left;
+}
+
+div#invitation_list input {
+	width: 20px;
+	height: 20px;
+}
+
+div#invitation_left h2 {
+	margin: 10px 0 50px 10px;
+}
+
+div#invitation_divider {
+	width: 1px;
+	height: 800px;
+	background: #000000;
+	float: left;
+}
+
+div#invitation_right img {
+	width: 30px;
+	height: 30px;
+}
+
+div#member_list ul:nth-of-type(1) {
+	list-style: none;
+	width: 214px;
+	height: 600px;
+	margin-right: auto;
+	margin-left: auto;
+	float: left;
+	margin-left: 50px;
+}
+
+div#member_list  ul:nth-of-type(1) img {
+	float: left;
+	border: 1px #000000 solid;
+	margin: 2px;
+}
+
+div#member_list {
+	height: 600px;
+	width: 350px;
+	max-height: 600px;
+	overflow: auto;
+}
+
+div#invitation_right_top {
+	width: 400px;
+	height: 100px;
+}
+
+div#member_list ul:nth-of-type(1) li {
+	/*width: 204px;*/
+	height: 36px;
+	border: 1px solid #000000;
+	margin: 5px;
+	margin-right: 0;
+	line-height: 36px;
+}
+
+div#member_list ul:nth-of-type(2) li {
+	list-style: none;
+	width: 30px;
+	height: 38px;
+	margin: 5px;
+	line-height: 38px;
+}
+
+div#member_list ul:nth-of-type(2) input {
+	width: 20px;
+	height: 20px;
+}
+
+div#invitation_right ul#last_ul {
+	margin: 0 auto;
+	width: 300px;
+	height: 50px;
+}
+
+div#invitation_right ul#last_ul li {
+	float: left;
+	width: 98px;
+	list-style: none;
+	height: 48px;
+	border: 1px #FFFFFF solid;
+	border-radius: 4px;
+	background: #9393FF;
+	color: white;
+	line-height: 48px;
+	text-align: center;
+	margin: 25px;
+}
+
+div#tip {
+	minWidth: 100px;
+	height: 50px;
+	background: #9393FF;
+	color: white;
+	line-height: 50px;
+	text-align: center;
+	border: 1px solid #FFFFFF;
+	border-radius: 4px;
+	position: absolute;
+	top: 350px;
+	left: 300px;
+	display: none;
+}

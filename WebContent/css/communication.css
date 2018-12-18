@@ -1,0 +1,385 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+div#communication {
+	width: 700px;
+	height: 800px;
+	position: absolute;
+	background: rgba(90, 89, 89, 0.04)
+}
+
+div#right {
+	max-height: 800px;
+	overflow: hidden;
+	text-align: center;
+}
+
+div#right #top {
+	height: 104px;
+}
+
+div#right #top ul {
+	list-style: none;
+	display: none;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+div#top select {
+	height: 30px;
+	width: 200px;
+	margin: 20px 250px;
+}
+
+div#communitcate #talk, div#communitcate #send {
+	margin: 0 auto;
+}
+
+div#communitcate #talk {
+	width: 700px;
+	height: 470px;
+	max-height: 470px;
+	overflow: auto;
+	overflow-x:hidden;
+}
+
+div#communitcate #send {
+	width: 700px;
+	height: 250px;
+	position: absolute;
+}
+
+div#detail {
+	text-align: center;
+	display: none;
+}
+
+div#detail img {
+	width: 100px;
+	height: 100px;
+	border: 1px solid #000000;
+	border-radius: 50px;
+	border-color: grey;
+}
+
+div#detail table img {
+	width: 50px;
+	height: 50px;
+	border: 1px solid #000000;
+	border-radius: 25px;
+}
+
+div#detail table {
+	margin: 0 auto;
+	width: 600px;
+	height: 300px;
+	font-family: "微软雅黑";
+	font-weight: bold;
+	color: #947474;
+	margin-top: 50px;
+	border: 1px solid #000000;
+}
+
+div#detail table th {
+	letter-spacing: 10px;
+	font-size: 20px;
+	width: 200px;
+}
+
+div#detail table td {
+	text-align: left;
+}
+
+div#detail table th {
+	text-align: center;
+}
+
+div#detail table ul {
+	margin: 0 auto;
+	height: 60px;
+}
+
+div#detail table ul li {
+	list-style: none;
+	height: 50px;
+}
+
+div#detail table li img {
+	width: 50px;
+	height: 50px;
+	float: left;
+	margin: 10px;
+}
+
+div#detail tr:last-child img:last-child {
+	cursor: pointer;
+}
+
+div#map {
+	width: 700px;
+	height: 700px;
+	min-height: 700px;
+	overflow: hidden;
+}
+
+.left_msg {
+	margin: 0 20px;
+	margin-bottom: -30px;
+}
+
+.right_msg {
+	left: 500px;
+	float: right;
+	width: 700px;
+	margin-bottom: 10px;
+}
+.left_msg ul {
+	list-style: none;
+	position: relative;
+	left: 80px;
+	top: -55px;
+}
+
+.right_msg ul {
+	list-style: none;
+	float: right;
+}
+.right_msg ul li{
+	float: left;
+}
+.left_msg img, .right_msg img {
+	width: 50px;
+	height: 50px;
+	border: 1px solid #000000;
+	margin: 0 10px;
+	border-radius: 4px;
+}
+
+.left_msg p {
+	text-align: center;
+	line-height: 50px;
+	font-family: "微软雅黑";
+	border-radius: 4px;
+	letter-spacing: 4px;
+	max-width: 450px;
+	display: inline-block;
+	background: white;
+	color: #000000;
+	border: solid 1px white;
+	padding: 0 4px;
+}
+
+.right_msg p {
+	text-align: center;
+	line-height: 50px;
+	font-family: "微软雅黑";
+	border-radius: 4px;
+	letter-spacing: 4px;
+	max-width: 450px;
+	display: inline-block;
+	background: #2be606;
+	color: #000000;
+	border: solid 1px #2be606;
+	padding: 0 4px;
+	
+}
+
+textarea {
+	width: 700px;
+	height: 235px;
+	overflow: hidden;
+	font-size: 30px;
+}
+
+div#communitcate button {
+	font-family: "微软雅黑";
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	padding: 10px 20px;
+	letter-spacing: 4px;
+	border: solid 1px #FFFFFF;
+	border-radius: 4px;
+	background: #9393FF;
+	color: white;
+	position: absolute;
+	right: 40px;
+	bottom: 40px;
+	cursor: pointer;
+}
+
+div#communication #top h3 {
+	letter-spacing: 4px;
+	font-family: "微软雅黑";
+	height: 30px;
+	line-height: 30px;
+	margin: 0 0;
+	margin-left: 250px;
+	font-size: 20px;
+}
+
+#allmap {
+	width: 700px;
+	height: 700px;
+	margin: 0;
+	font-family: "微软雅黑";
+	background: #808080;
+	display: none;
+	min-height: 700px;
+	overflow: hidden;
+}
+
+.map_info {
+	width: 200px;
+	height: 100px;
+	background: white;
+}
+
+.map_divider {
+	width: 200px;
+	height: 1px;
+	background: #000000;
+	margin: 5px 0;
+}
+
+.map_info p:first-of-type {
+	font-family: "微软雅黑";
+	height: 50px;
+	line-height: 50px;
+}
+
+.map_info p:last-child {
+	float: right;
+}
+
+.map_info img {
+	width: 50px;
+	height: 50px;
+	float: left;
+}
+
+div#detail button {
+	width: 200px;
+	height: 50px;
+	margin: 0 auto;
+	border-radius: 4px;
+	border: 1px;
+	background: #9393FF;
+	color: red;
+	margin-top: 20px;
+	font-size: 20px;
+}
+
+div#newMsgTip {
+	min-width: 100px;
+	height: 50px;
+	color: white;
+	background: #9393FF;
+	position: absolute;
+	top: 120px;
+	right: 0;
+	line-height: 50px;
+	text-align: center;
+	font-family: "微软雅黑";
+	font-size: 15px;
+	padding: 0 10px;
+	display: none;
+}
+
+div#tip {
+	minWidth: 100px;
+	height: 50px;
+	background: #9393FF;
+	color: white;
+	line-height: 50px;
+	text-align: center;
+	border: 1px solid #FFFFFF;
+	border-radius: 4px;
+	position: absolute;
+	top: 350px;
+	left: 300px;
+	display: none;
+}
+
+div#removeMember {
+	width: 300px;
+	height: 800px;
+	border: 1px solid grey;
+	position: absolute;
+	right: -300px;
+	top: 0;
+	background: white;
+	text-align: center;
+	border-radius: 4px;
+}
+
+div#removeMember ul {
+	list-style: none;
+	width: 298px;
+	height: 600px;
+	max-height: 600px;
+	overflow: auto;
+}
+
+div#removeMember ul li {
+	height: 60px;
+}
+
+div#removeMember input {
+	border-radius: 4px;
+	width: 250px;
+	height: 40px;
+	margin-top: 20px;
+}
+
+div#removeMember button {
+	background: #9393FF;
+	color: red;
+	font-family: "微软雅黑";
+	font-size: 15px;
+	min-width: 100px;
+	height: 50px;
+	line-height: 50px;
+	letter-spacing: 4px;
+	border-radius: 4px;
+	margin: 20px 10px 10px 10px;
+	padding: 0 4px;
+}
+
+div#removeMember button:first-of-type {
+	color: #000000;
+}
+
+div#removeMember img {
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	border: solid 1px #9393FF;
+	margin: 10px;
+}
+
+
+div#removeTip {
+	minWidth: 100px;
+	height: 50px;
+	background: #9393FF;
+	color: white;
+	line-height: 50px;
+	text-align: center;
+	border: 1px solid #FFFFFF;
+	border-radius: 4px;
+	position: absolute;
+	top: 350px;
+	right: 100px;
+	display: none;
+}
+.remove{
+	
+}
+
+

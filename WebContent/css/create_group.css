@@ -1,0 +1,87 @@
+
+ 	*{
+				margin: 0;
+				padding: 0;
+			}
+			div#modify_personal,
+			div#create_group {
+				width: 702px;
+				height: 800px;
+				font-family: "微软雅黑";
+			}
+			
+			div#modify_personal table,
+			div#create_group table {
+				min-width: 500px;
+				height: 400px;
+				margin: 0 auto;
+				font-size: 20px;
+			}
+			
+			div#modify_personal table th,
+			div#create_group table th {
+				text-align: right;
+				font-size: 20px;
+			}
+			div#create_group td{
+					padding-left: 50px;
+			}
+			div#modify_personal table td input,
+			div#create_group table input {
+				padding: 5px 10px;
+				border-radius: 4px;
+			
+			}
+			
+			div#create_group h2 {
+				margin: 0 auto;
+				letter-spacing: 10px;
+				height: 104px;
+				width: 300px;
+				line-height: 104px;
+				text-align: center;
+				font-size: 30px;
+			}
+			
+			div#modify_personal ul,
+			div#create_group ul {
+				margin: 0 auto;
+				width: 284px;
+				height: 200px;
+			}
+			
+			div#modify_personal ul li,
+			div#create_group ul li {
+				list-style: none;
+				float: left;
+				width: 100px;
+				height: 30px;
+				border: 1px solid #FFFFFF;
+				background: #9393FF;
+				border-radius: 4px;
+				padding: 5px 0;
+				color: white;
+				line-height: 30px;
+				position: relative;
+				top: 79px;
+				margin: 0 20px;
+				text-align: center;
+			}
+
+div#tip{
+	 width: 100px;
+	 height: 50px;
+	 background: #9393FF;
+	 color: white;
+	line-height: 50px;
+	text-align: center;
+	border: 1px solid #FFFFFF;
+		border-radius: 4px;
+		position: absolute;
+		top: 350px;
+		left: 300px; 
+		display:none;
+}
+.error{
+	color: red;
+}

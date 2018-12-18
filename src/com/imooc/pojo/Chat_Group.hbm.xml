@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-11-5 11:16:20 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.imooc.pojo.Chat_Group" table="CHAT_GROUP">
+        <id name="group_id" type="long">
+            <column name="GROUP_ID" />
+            <generator class="native" />
+        </id>
+        <property name="user_id" type="long">
+            <column name="USER_ID" />
+        </property>
+        <property name="group_account" type="java.lang.String">
+            <column name="GROUP_ACCOUNT" />
+        </property>
+        <property name="group_name" type="java.lang.String">
+            <column name="GROUP_NAME" />
+        </property>
+        <property name="group_sum" type="int">
+            <column name="GROUP_SUM" />
+        </property>
+        <property name="group_image" type="java.lang.String">
+            <column name="GROUP_IMAGE" />
+        </property>
+        <property name="group_create_date" type="java.util.Date">
+            <column name="GROUP_CREATE_DATE" />
+        </property>
+        <property name="group_notice" type="java.lang.String">
+            <column name="GROUP_NOTICE" />
+        </property>
+        <property name="group_forbidden" type="boolean">
+            <column name="GROUP_FORBIDDEN" />
+        </property>
+        <!-- cascade配置当保存群时会自动级联保存user到users表，并自动在中间表插入数据 -->
+        <set name="users" table="USER_GROUP_RELATION"  cascade="save-update" inverse="true" order-by="user_id">
+            <key><column name="GROUP_ID"></column></key>
+            <many-to-many class="com.imooc.pojo.User" column="USER_ID" ></many-to-many>
+        </set>
+      <!--   配置双向一对多关联关系，设置inverse属性为true，由多方来维护关联关系,当保存群时会自动保存聊天记录-->
+         <set name="chat_Records"  table="CHAT_RECORD" inverse="true" cascade="save-update" order-by="record_id">
+            <key column="GROUP_ID"></key>
+            <one-to-many class="com.imooc.pojo.Chat_Record"/>
+        </set>
+    </class>
+</hibernate-mapping>

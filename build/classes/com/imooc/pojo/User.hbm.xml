@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-11-5 11:16:20 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.imooc.pojo.User" table="USER">
+        <id name="user_id" type="long">
+            <column name="USER_ID" />
+            <generator class="native" />
+        </id>
+        <property name="user_account" type="java.lang.String">
+            <column name="USER_ACCOUNT" />
+        </property>
+        <property name="user_password" type="java.lang.String">
+            <column name="USER_PASSWORD" />
+        </property>
+        <property name="user_email" type="java.lang.String">
+            <column name="USER_EMAIL" />
+        </property>
+        <property name="user_phone" type="java.lang.String">
+            <column name="USER_PHONE" />
+        </property>
+        <property name="user_name" type="java.lang.String">
+            <column name="USER_NAME" />
+        </property>
+        <property name="user_image" type="java.lang.String">
+            <column name="USER_IMAGE" />
+        </property>
+        <property name="user_last_login_time" type="java.util.Date">
+            <column name="USER_LAST_LOGIN_TIME" />
+        </property>
+        <property name="user_online" type="boolean">
+            <column name="USER_ONLINE" />
+        </property>
+        <property name="user_forbidden" type="boolean">
+            <column name="USER_FORBIDDEN" />
+        </property>
+              
+        <set name="chat_Groups" table="USER_GROUP_RELATION"   cascade="save-update" order-by="group_id">
+       <!--  指定关联的外键列 -->
+     		  <key><column name="USER_ID"></column></key>
+            <many-to-many class="com.imooc.pojo.Chat_Group" column="GROUP_ID"></many-to-many>
+        </set>
+           <set name="common_Messages" table="COMMON_MESSAGE" inverse="true" cascade="save-update" order-by="message_id">
+             <!--  指定关联的外键列 -->
+            <key column="RECEIVER_ID"></key>
+            <one-to-many class="com.imooc.pojo.Common_Message"/>
+        </set>
+    </class>
+</hibernate-mapping>

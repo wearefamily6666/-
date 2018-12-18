@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/right.css"/>
+	</head>
+
+	<body>
+		<link href="../css/bootstrap.css" rel="stylesheet">
+		<div class="container_right">
+			
+		
+		<!--	选择菜单-->
+		<div class="container-fluid" style="margin: 10px;">
+
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4" style="text-align: center;height: 50px; line-height: 50px;">
+					<select>
+						<option>软件162</option>
+						<option>实时位置</option>
+						<option>软件162群详情</option>
+					</select>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+		</div>
+		<!--	聊天界面	-->
+		<div class="communicate">
+			<div class="talk_left">
+				<img src="../img/头像1.jpg" alt="..." class="img-circle">
+				<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+  Popover on 左侧
+</button>
+			</div>
+			<div class="talk_right">
+				<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+  Popover on 右侧
+</button> <img src="../img/头像2.jpg" alt="..." class="img-circle">
+			</div>
+
+		</div>
+		<!--	 输入内容并发送-->
+		<div class="send" style="border: solid black 1px;height: 200px;">
+			<textarea style="min-height: 100px;width: 100%;border: 0px;" placeholder="輸入聊天内容...">
+				
+				
+			</textarea>
+			<div class="row">
+				<div class="col-md-10"></div>
+				<div class="col-md-2" align="center"><button type="button" class="btn btn-info" style="min-height: 50px;min-width: 100px; ">发送</button></div>
+			</div>
+
+		</div>
+</div>
+		<script src="../js/jquery-1.11.1.js"></script>
+		<script src="../js/jquery-1.11.1.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script>
+			$("textarea").ready(function() {
+				$(this).focus(function() {
+					$(this).css({
+						"border": "0",
+						"outline": "none",
+						"resize": "none"
+					})
+				})
+
+			});
+		</script>
+	</body>
+
+</html>

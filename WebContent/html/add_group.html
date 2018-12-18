@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap-theme.min.css"/>
+		 <link rel="stylesheet" type="text/css" href="../css/add_group.css"/>
+	</head>
+	<script type="text/javascript" src="../js/jquery-1.11.1.js" ></script>
+	<script type="text/javascript" src="../js/jquery-1.11.1.min.js" ></script>
+	<script type="text/javascript" src="../js/bootstrap.js" ></script>
+	<body>
+		<div id="add_group">
+			<!--左侧-->
+			<div id="add_group_left">`
+				<h2>加入群</h2>
+				<!--搜索框-->
+				<div id="add_group_search">
+					<input type="text" value="搜索群名"/>
+					
+				</div>
+				<!--群列表-->
+				<div id="add_group_list">
+					<ul>
+						<li><img src="../img/头像2.jpg" />
+							<div class="add_group_wraper">
+								<h3>软件162</h3>
+								<span >
+								50人
+							</span>
+							</div>
+							
+						</li>
+						<li><img src="../img/头像1.jpg" />
+							<div class="add_group_wraper">
+								<h3>软件163</h3>
+								<span >
+								40人
+							</span>
+							</div>
+
+						</li>
+					</ul>
+					<ul>
+						<li><input type="radio" name="group" id="" value="group1" /></li>
+						<li><input type="radio" name="group" id="" value="group2" /></li>
+					</ul>
+				</div>
+			</div>
+			<div id="add_group_divider">
+				
+			</div>
+				<!--右侧-->
+				<div id="add_group_right">
+					<table border="0" cellspacing="" cellpadding="">
+						<tr><th>群简介:</th><td>这是群简介</td></tr>
+						<tr><th>群主:</th><td>张三</td></tr>
+						<tr><th>群人数:</th><td>20人</td></tr>
+					</table>
+					<ul>
+					<li>取消</li>
+					<li>确定</li>
+				</ul>
+				</div>
+				
+			</div>
+	</body>
+	<script type="text/javascript">
+		$("#add_group_list li").change(function()
+		{
+			
+		})
+		
+	</script>
+</html>

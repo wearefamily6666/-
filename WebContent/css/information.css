@@ -1,0 +1,88 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+div#information {
+	width: 700px;
+	height: 802px;
+	border: 1px solid #000000;
+	padding: 10px;
+
+}
+
+#main {
+	max-width: 700px;
+	height: 780px;
+	margin: 0 auto;
+	max-height: 780px;
+	overflow: auto;
+}
+ 
+
+div#information .info_wraper {
+	width: 450px;
+	height: 100px;
+
+}
+
+span.time {
+	 float: right;
+}
+span.last_news {
+	position: relative;
+	top: 40px;
+	left: 15px;
+	max-width: 300px;
+	font-size: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display:inline-block;
+}
+
+h4 {
+	position: relative;
+	top: 10px;
+	left: 15px;
+	max-width:300px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+div img {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	border: solid 1px #FFFFFF;
+	border-radius: 25px;
+	background: #999999;
+	top: 24px;
+	left: 10px;
+	float: left;
+}
+
+button {
+	width: 100px;
+	height: 40px;
+	background: #9393FF;
+	color: white;
+	border: 1px solid #FFFFFF;
+	border-radius: 4px;
+	font-family: "微软雅黑";
+	font-size: 15px;
+	line-height: 40px;
+	text-align: center;
+	position: relative;
+	 bottom: 50px;
+	left: 550px;
+}
+ .divider{
+ 	width: 700px;
+ 	height: 1px;
+ 	background: rgba(128, 128, 128, 0.58);
+ 	
+ }
+.divider:first-of-type{
+	margin-top: 20px;
+}

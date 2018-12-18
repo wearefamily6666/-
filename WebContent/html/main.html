@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--<link rel="stylesheet" href="../css/bootstrap-theme.min.css" />-->
+		<link rel="stylesheet" type="text/css" href="../css/main.css"/>
+		
+	</head>
+
+	<body>
+
+		<!--正文布局-->
+		<div class="content">
+			
+			<div id="main">
+					<div id="left">
+				<!--顶部-->
+				<div id="personal">
+					<ul>
+						<li><img src="../img/头像1.jpg" /></li>
+						<li>用户名</li>
+						<li><img src="../img/ellipsis.png" /></li>
+					</ul>
+
+				</div>
+				<hr />
+				<!--搜索框-->
+				<div id="search">
+					<input type="text" value="输入搜索"/>
+				 
+				</div>
+				<!--按钮切换-->
+				<div id="icon_change">
+					<ul>
+						<li><img src="../img/speech-bubble.png" /></li>
+						<li><img src="../img/community (1).png" /></li>
+					</ul>
+				</div>
+				<!--群列表、-->
+				<div id="list">
+					<ul>
+						<li><img src="../img/头像2.jpg" />
+							<div class="wraper">
+								<h3>软件162</h3>
+								<span class="count">
+								50人
+							</span>
+							</div>
+
+						</li>
+						<li><img src="../img/头像1.jpg" />
+							<div class="wraper">
+								<h3>软件163</h3>
+								<span class="count">
+								40人
+							</span>
+							</div>
+
+						</li>
+					</ul>
+
+					<!--消息列表-->
+					<ul>
+						<li><img src="../img/头像2.jpg" />
+							<div class="wraper">
+								<h3>消息类型一</h3>
+								<span id="count">
+								20条新消息
+							</span>
+							</div>
+
+						</li>
+
+					</ul>
+				</div>
+
+				<!--更多按钮-->
+				<div id="img_more">
+
+					<ul>
+						<li class="more">创建群</li>
+						<li class="more">加入群</li>
+					</ul>
+
+					<img src="../img/plus.png" />
+
+				</div>
+			</div>
+			<!--右布局-->
+			<div id="right">
+			<iframe src="" width="" height="" name="iframea" scrolling="no"></iframe>
+			</div>
+			<div id="top_ul"  >
+						<ul>
+							<li class="more" >修改个人资料</li>
+							
+							<li class="more">
+								退出登录
+							</li>
+							<!-- Button trigger modal -->
+
+
+
+						</ul>
+					</div>
+			</div>
+		
+
+		</div>
+		<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+		
+		<script type="text/javascript">
+			$("#personal li:eq(2)").click(function() {
+				$("#top_ul").toggle();
+
+			})
+			$("#img_more img").click(function() {
+				$("#img_more ul").toggle();
+			})
+			$("#icon_change ul li:eq(0) img").click(function() {
+				$(this).attr("src", "../img/speech-bubble (1).png");
+				$("#icon_change ul li:eq(1) img").attr("src", "../img/community.png");
+				$("#list ul:eq(0)").hide();
+				$("#list ul:eq(1)").show();
+			})
+			$("#icon_change ul li:eq(1) img").click(function() {
+				$(this).attr("src", "../img/community (1).png");
+				$("#icon_change ul li:eq(0) img").attr("src", "../img/speech-bubble.png");
+				$("#list ul:eq(0)").show();
+				$("#list ul:eq(1)").hide();
+			})
+			/*下拉列表初始化内容*/
+			$(document).ready(function() {
+				$("div#right iframe").attr("src","communication.html");
+			})
+			/*群列表点击监听*/
+			$("div#list ul:eq(0) li").click(function() {
+				$("div#right iframe").attr("src","communication.html");
+// 				$("div#right").load("communication.html","aa");
+			})
+			
+			$("div#top_ul li:eq(0)").click(function() {
+				$("div#right iframe").attr("src","modify_personal.html")
+//				$("div#right iframe").load("modify_personal.html");
+			})
+			/*是否退出登录*/
+			$("div#top_ul li:eq(1)").click(function() {
+				confirm("是否退出登录");
+			})
+		 	
+			$("div#img_more li:eq(0)").click(function() {
+				$("div#right iframe").attr("src","create_group.html");
+//				 $("div#right").load("create_group.html");
+			})
+		 
+				$("div#img_more li:eq(1)").click(function() {
+					$("div#right iframe").attr("src","add_group.html");
+//				 $("div#right").load("add_group.html");
+			})
+ 			/*搜索框监听*/
+			$("div#search input").bind('input propertychange',function()
+			{
+				console.log("aaa")
+			})
+			$("div#list ul:eq(1) li").click(function()
+			{
+//				$("div#right").load("infomation.html");
+				$("div#right iframe").attr("src","infomation.html");
+			}
+			)
+		</script>
+	
+	</body>
+
+</html>

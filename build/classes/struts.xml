@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+   "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	   <constant name="struts.action.extension" value=","></constant>    
+    <!-- 上传文件最大限制（如果为多文件上传，则为多个文件的总大小） -->    
+    <constant name="struts.multipart.maxSize" value="40000000"></constant>    
+    <!-- 存放上传文件的临时目录 -->    
+    <constant name="struts.multipart.saveDir" value="E:\\temp"></constant> 
+      <!--不拦截ws请求 -->
+      <constant name="struts.action.excludePattern" value="/websocket"></constant>
+	<package name="ssh2" namespace="/" extends="struts-default,json-default">
+	
+		<interceptors>
+    		<interceptor name="inter" class="com.imooc.service.impl.interceptor.Iter">
+    			<param name="includeMethods"></param> <!-- 拦截Method1方法 -->
+    			<param name="excludeMethods">login,loginvalidate</param>
+    		</interceptor>
+    		<interceptor-stack name="myInterceptor">
+    			<interceptor-ref name="inter"></interceptor-ref>
+    			<interceptor-ref name="defaultStack"></interceptor-ref>
+    		</interceptor-stack>
+    	</interceptors>
+
+ 
+ 
+         <!-- 定义全局Result -->  
+        <global-results>  
+            <!-- 当返回login视图名时，转入/login.jsp页面 -->  
+            <result name="login1">/WEB-INF/jsp/login.jsp</result>  
+              <result name="login2">/WEB-INF/jsp/admin_login.jsp</result>  
+        </global-results>
+        
+ 
+		<!-- 配置user -->
+		<action name="user_*" class="userAction" method="{1}">
+			<result name="login">/WEB-INF/jsp/login.jsp</result>
+			<result name="loginSuccess">/WEB-INF/jsp/main.jsp</result>
+			<result name="logout" type="redirectAction">user_login.action</result>
+			<result name="modifyUser">/WEB-INF/jsp/modify_personal.jsp</result>
+
+			<param name="maximumSize ">1000000</param>
+			<param name="allowedTypes">image/*</param>
+			
+			<result name="invitation2" type="json">
+				<param name="root">users</param>
+			</result>
+		<!-- 在defaultStack中配置拦截方法，参数includeMethods中添加被拦截的方法名称，excludeMethods中添加不需要拦截的名称 -->
+		<interceptor-ref name="myInterceptor">
+		</interceptor-ref>
+	<interceptor-ref name="defaultStack"></interceptor-ref>
+ 
+		</action>
+ 
+		<!-- 配置image -->
+		<action name="image_*" class="com.imooc.action.ImageAction"
+			method="{1}">
+		<!-- 在defaultStack中配置拦截方法，参数includeMethods中添加被拦截的方法名称，excludeMethods中添加不需要拦截的名称 -->
+		<interceptor-ref name="myInterceptor">
+		 
+		</interceptor-ref>
+		</action>
+		
+		<!-- 配置chatGroup -->
+		<action name="chatGroup_*" class="chatGroupAction" method="{1}">
+			<result name="findAllJoined" type="json">
+				<param name="root">objects</param>
+			</result>
+			<result name="findAllNotJoin" type="json">
+				<param name="root">set</param>
+			</result>
+			<result name="findAllJoinedByKey" type="json">
+				<param name="root">set</param>
+			</result>
+			<result name="findAllNotJoinedByKey" type="json">
+				<param name="root">set</param>
+			</result>
+			<result name="findDetailByGroupId" type="json">
+				<param name="root">model</param>
+			</result>
+				<result name="findDetailByGroupId2" type="json">
+				<param name="root">map</param>
+			</result>
+			<result name="invitation" type="json">
+				<param name="root">set</param>
+			</result>
+			<result name="search" type="json">
+				<param name="root">set</param>
+			</result>
+			<result name="search2" type="json">
+				<param name="root">maps</param>
+			</result>
+			<result name="removeMember" type="json">
+				<param name="root">maps</param>
+			</result>
+			<result name="getLocation" type="json">
+				<param name="root">maps</param>
+			</result>
+				<result name="manager" type="json">
+				<param name="root">maps</param>
+			</result>
+			<result name="createGroup">/WEB-INF/jsp/create_group.jsp</result>
+			<result name="addGroup">/WEB-INF/jsp/add_group.jsp</result>
+			
+			
+					<!-- 在defaultStack中配置拦截方法，参数includeMethods中添加被拦截的方法名称，excludeMethods中添加不需要拦截的名称 -->
+		<interceptor-ref name="myInterceptor">
+		</interceptor-ref>
+		</action>
+			<!-- 配置commonMessage -->
+		<action name="commonMessage_*" class="commonMessageAction" method="{1}">
+		<result name="findByUserId" type="json">
+			<param name="root">list</param>
+		</result>
+			<result name="information">/WEB-INF/jsp/information.jsp</result>
+					<!-- 在defaultStack中配置拦截方法，参数includeMethods中添加被拦截的方法名称，excludeMethods中添加不需要拦截的名称 -->
+		<interceptor-ref name="myInterceptor">
+		</interceptor-ref>
+		</action>
+	<!-- 	配置chatRecord -->
+		<action name="chatRecord_*" class="chatRecordAction" method="{1}">
+			<result name="getMsg" type="json">
+				<param name="root">maps</param>
+			</result>
+			<result name="communicate">/WEB-INF/jsp/communication.jsp</result>
+			<result name="invitation">/WEB-INF/jsp/invitation.jsp</result>
+					<!-- 在defaultStack中配置拦截方法，参数includeMethods中添加被拦截的方法名称，excludeMethods中添加不需要拦截的名称 -->
+		<interceptor-ref name="myInterceptor">
+		</interceptor-ref>
+		</action>
+		
+		<!-- 配置admin -->
+		<action name="admin_*" class="adminAction" method="{1}">
+			<result name="login">/WEB-INF/jsp/admin_login.jsp</result>
+			<result name="loginSuccess">/WEB-INF/jsp/manager.jsp</result>
+				<result name="userManager" type="json">
+				<param name="root">maps</param>
+			</result>
+				<result name="groupManager" type="json">
+				<param name="root">maps</param>
+			</result>
+				<result name="group_forbidden" type="json">
+				<param name="root">set</param>
+			</result>
+				<result name="user_forbidden" type="json">
+				<param name="root">set</param>
+			</result>		
+			<result name="findUserByPage" type="json">
+				<param name="root">pageBean</param>
+			</result>
+			<result name="findUserByFirstPage" type="json">
+				<param name="root">pageBean</param>
+			</result>
+			<result name="findUserByLastPage" type="json">
+				<param name="root">pageBean</param>
+			</result>
+						<result name="findGroupByPage" type="json">
+				<param name="root">pageBean</param>
+			</result>
+			<result name="findGroupByFirstPage" type="json">
+				<param name="root">pageBean</param>
+			</result>
+			<result name="findGroupByLastPage" type="json">
+				<param name="root">pageBean</param>
+			</result>
+			<result name="searchUserByPage" type="json">
+				<param name="root">pageBean</param>
+			</result>
+			<result name="searchUserByFirstPage" type="json">
+				<param name="root">pageBean</param>
+			</result>
+			<result name="searchUserByLastPage" type="json">
+				<param name="root">pageBean</param>
+			</result>
+			<result name="searchGroupByPage" type="json">
+				<param name="root">pageBean</param>
+			</result>
+			<result name="searchGroupByFirstPage" type="json">
+				<param name="root">pageBean</param>
+			</result>
+			<result name="searchGroupByLastPage" type="json">
+				<param name="root">pageBean</param>
+			</result>
+					<!-- 在defaultStack中配置拦截方法，参数includeMethods中添加被拦截的方法名称，excludeMethods中添加不需要拦截的名称 -->
+		<interceptor-ref name="myInterceptor">
+		</interceptor-ref>
+			<interceptor-ref name="defaultStack">
+		</interceptor-ref>
+		</action>
+		
+		
+	</package>
+ 
+ 
+ 
+</struts>

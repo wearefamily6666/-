@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-11-5 11:16:20 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.imooc.pojo.Common_Message" table="COMMON_MESSAGE">
+        <id name="message_id" type="long">
+            <column name="MESSAGE_ID" />
+            <generator class="native" />
+        </id>
+        <property name="group_id" type="long">
+            <column name="GROUP_ID" />
+        </property>
+            <property name="receiver_id" type="long">
+            <column name="RECEIVER_ID" />
+        </property>
+        <property name="sender_id" type="long">
+            <column name="SENDER_ID" />
+        </property>
+        <property name="message_type" type="int">
+            <column name="MESSAGE_TYPE" />
+        </property>
+        <property name="message_title" type="java.lang.String">
+            <column name="MESSAGE_TITLE" />
+        </property>
+        <property name="message_content" type="java.lang.String">
+            <column name="MESSAGE_CONTENT" />
+        </property>
+        <property name="message_send_time" type="java.util.Date">
+            <column name="MESSAGE_SEND_TIME" />
+        </property>
+        <property name="message_receive" type="boolean">
+            <column name="MESSAGE_RECEIVE" />
+        </property>
+        <property name="message_read" type="boolean">
+            <column name="MESSAGE_READ" />
+        </property>
+        <many-to-one name="user" class="com.imooc.pojo.User" cascade="save-update" insert="false" update="false" >
+            <column name="RECEIVER_ID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

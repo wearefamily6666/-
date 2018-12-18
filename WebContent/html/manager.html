@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" href="../css/honeySwitch.css" />
+		<link rel="stylesheet" type="text/css" href="../css/manager.css"/>
+	</head>
+
+	<body>
+		<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script type="text/javascript" src="../js/honeySwitch.js"></script>
+		<div class="wraper_main">
+			<!--导航栏-->
+			<header>
+				<nav>
+					<button>天下纵横后台管理系统</button>
+					<h2>用户管理</h2>
+					<h2>群管理</h2>
+				</nav>
+			</header>
+			<!--表格-->
+			<div class="content">
+				<!--用户管理-->
+				<div class="user_manager">
+					<table border="1" cellpadding="0" cellspacing="0" class="table-responsive">
+						<tr>
+							<th>用户名</th>
+							<th>所属群</th>
+							<th>是否在线</th>
+							<th>是否禁止登录</th>
+						</tr>
+						<tr>
+							<td>小明</td>
+							<td>滑稽162</td>
+							<td>是</td>
+							<td>
+
+								<span class="switch-off"></span>
+							</td>
+						</tr>
+						<tr>
+							<td>小红</td>
+							<td>滑稽162</td>
+							<td>是</td>
+							<td>
+
+								<span class="switch-off"></span>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<!--群管理-->
+				<div class="group_manager">
+					<ul>
+						<li>
+							<table border="1" cellspacing="0" cellpadding="0">
+								<tr>
+									<th>群名</th>
+									<th>在线人数</th>
+									<th>是否禁止</th>
+								</tr>
+
+							</table>
+						</li>
+						<!--分割线-->
+						<li></li>
+						<!--曲线图-->
+						<li>
+							<div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
+						</li>
+					</ul>
+
+				</div>
+
+				<div class="page">
+					<ul>
+						<li>每页
+							<select name="pageSize">
+								<option value="20">5</option>
+								<option value="30">10</option>
+							</select>
+							条记录
+						</li>
+						<li>
+							共<span>22</span> 条记录，
+							<select name="page">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+							</select>
+							/<span>20</span>页
+						</li>
+						<li>
+							<button>首页</button>
+							<button>上一页</button>
+							<button>下一页</button>
+							<button>尾页</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<footer>
+
+			</footer>
+		</div>
+
+		<script type="text/javascript">
+			$("h2:eq(0)").click(function() {
+				$("div.user_manager").show();
+				$("div.group_manager").hide();
+				$(this).css("color", "white");
+				$("h2:eq(1)").css("color", "#c7bcbc");
+			})
+			$("h2:eq(1)").click(function() {
+				$("div.user_manager").hide();
+				$("div.group_manager").show();
+				$(this).css("color", "white");
+				$("h2:eq(0)").css("color", "#c7bcbc");
+			})
+			/*滑动开关*/
+			/*用户管理*/
+			$(".user_manager span").click(function()
+			{ console.log(
+				$(this).parent().parent().children("td:eq(0)").text()
+					
+				)
+				if($(this).attr("class")=="switch-off"){
+				
+				console.log("开啦");
+				}else{
+					console.log("关啦");
+					
+				}
+			})
+			/*群管理*/
+					$(".group_manager span").click(function()
+			{console.log(
+				$(this).parent().parent().children("td:eq(0)").text()
+					
+				)
+				if($(this).attr("class")=="switch-off"){
+					console.log("开啦");
+				}else{
+					console.log("关啦");
+					
+				}
+			})
+		</script>
+		<!--曲线图js-->
+		<script language="JavaScript">
+			$(document).ready(function() {
+				var title = {
+					text: '天下纵横使用情况'
+				};
+				var subtitle = {
+					text: ''
+				};
+				var xAxis = {
+					categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+						'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+					]
+				};
+				var yAxis = {
+					title: {
+						text: '登录人数'
+					},
+					plotLines: [{
+						value: 0,
+						width: 1,
+						color: '#808080'
+					}]
+				};
+
+				var tooltip = {
+					valueSuffix: '人'
+				}
+
+				var legend = {
+					layout: 'vertical',
+					align: 'right',
+					verticalAlign: 'middle',
+					borderWidth: 0
+				};
+
+				var series = [{
+						name: 'pc端',
+						data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2,
+							26.5, 23.3, 18.3, 13.9, 9.6
+						]
+					},
+					{
+						name: 'android端',
+						data: [-0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8,
+							24.1, 20.1, 14.1, 8.6, 2.5
+						]
+					}
+
+				];
+
+				var json = {};
+
+				json.title = title;
+				json.subtitle = subtitle;
+				json.xAxis = xAxis;
+				json.yAxis = yAxis;
+				json.tooltip = tooltip;
+				json.legend = legend;
+				json.series = series;
+
+				$('#container').highcharts(json);
+			});
+		</script>
+	</body>
+
+</html>

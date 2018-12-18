@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-11-5 21:45:57 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.imooc.pojo.Chat_Record" table="CHAT_RECORD">
+        <id name="record_id" type="long">
+            <column name="RECORD_ID" />
+            <generator class="native" />
+        </id>
+        <property name="user_id" type="long">
+            <column name="USER_ID" />
+        </property>
+        <property name="record_content" type="java.lang.String">
+            <column name="RECORD_CONTENT" />
+        </property>
+        <property name="record_send_time" type="java.util.Date">
+            <column name="RECORD_SEND_TIME" />
+        </property>
+         <property name="group_id" type="long"  >
+            <column name="GROUP_ID" />
+        </property>
+         <property name="record_is_read" type="boolean"  >
+            <column name="RECORD_IS_READ" />
+        </property>
+        <many-to-one name="chat_Group" class="com.imooc.pojo.Chat_Group" cascade="save-update" column="GROUP_ID" insert="false" update="false" >
+        </many-to-one>  
+    </class>
+</hibernate-mapping>

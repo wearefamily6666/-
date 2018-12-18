@@ -1,0 +1,38 @@
+
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.container_right {
+				width: 800px;
+				height: 1080px;
+			}
+			
+			li.talk_left,
+			li.talk_right {
+				list-style: none;
+			}
+			
+			div.talk_left img,
+			div.talk_right img {
+				max-height: 50px;
+				max-width: 50px;
+				margin: 10px;
+			}
+			
+			div.talk_right {
+				float: right;
+			}
+			
+			div.communicate {
+				border: solid black 1px;
+				min-height: 830px;
+			}
+			div select option{
+				padding: 10px 20px;
+			}
+			div select{
+				padding: 10px 20px;
+				
+			}

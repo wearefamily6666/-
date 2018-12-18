@@ -1,0 +1,294 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+div.content {
+	width: 1004px;
+	height: 800px;
+	margin: 20px auto;
+	
+}
+
+div#main {
+	width: 1004px;
+	height: 800px;
+	position: absolute;
+}
+
+div.content #left {
+	width: 300px;
+	height: 800px;
+	float: left;
+	border: 1px solid #000000;
+	background: rgba(150, 150, 152, 0.24);
+}
+
+div.content #right {
+	width: 700px;
+	height: 800px;
+	float: left;
+	border: 1px solid #000000;
+	max-height: 802px;
+	overflow: hidden;
+}
+
+div.content #right iframe {
+	width: 700px;
+	height: 800px;
+}
+
+div#personal ul li {
+	list-style: none;
+	float: left;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	color: #737373;
+	text-align: center;
+}
+
+div#personal ul li img {
+	width: 100px;
+	height: 100px;
+}
+
+div#personal ul li:nth-child(3) img {
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
+div#search {
+	margin-top: 20px;
+}
+
+div#search input {
+	width: 250px;
+	height: 50px;
+	border: 1px solid #000000;
+	border-radius: 5px;
+	margin-left: 20px;
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+div#icon_change {
+	margin: 0 auto;
+}
+
+div#icon_change img {
+	width: 50px;
+	height: 50px;
+}
+
+div#icon_change ul li {
+	list-style: none;
+	float: left;
+	width: 50%;
+	text-align: center;
+	cursor: pointer;
+}
+
+div#list {
+	clear: both;
+	height: 420px;
+	max-height: 420px;
+	overflow: auto;
+}
+
+div#list ul li span {
+	font-size: 10px;
+}
+
+div#list ul li {
+	list-style: none;
+	margin: 5px 5px;
+	border: solid 1px #000000;
+	font-family: "微软雅黑";
+	height: 60px;
+	cursor: pointer;
+}
+
+div#list ul li img {
+	width: 50px;
+	height: 50px;
+	border: solid 1px #FFFFFF;
+	margin: 4px;
+}
+
+div#list ul .wraper {
+	float: left;
+	margin: 5px 5px;
+}
+div#list h3{
+	max-width:200px;
+overflow: hidden;
+	text-overflow:ellipsis;
+white-space: nowrap;
+}
+
+div#list ul li img {
+	float: left;
+}
+
+div#img_more ul {
+	float: left;
+	width: 150px;
+	display: none;
+}
+
+div#img_more ul li {
+	width: 122px;
+	margin: 0 auto;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+div#img_more img {
+	width: 100px;
+	height: 100px;
+	float: right;
+	margin-right: 30px;
+	cursor: pointer;
+}
+
+.more {
+	border: 1px solid #FFFFFF;
+	font-family: "微软雅黑";
+	width: 100px;
+	height: 50px;
+	background: #9393FF;
+	list-style: none;
+	text-align: center;
+	line-height: 50px;
+	color: white;
+	padding: 0 10px;
+}
+
+button {
+	font-family: "微软雅黑";
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	padding: 10px 20px;
+	letter-spacing: 4px;
+	border: solid 1px #FFFFFF;
+	border-radius: 4px;
+	background: #9393FF;
+	color: white;
+	position: absolute;
+	right: 40px;
+	bottom: 40px;
+	cursor: pointer;
+}
+
+div#left #list ul:nth-child(2) {
+	display: none;
+}
+
+div#top_ul {
+	height: 104px;
+	width: 250px;
+	position: absolute;
+	top: 0;
+	left: 300px;
+	display: none;
+}
+
+div#top_ul li {
+	cursor: pointer;
+}
+
+div#list ul:nth-child(2) li .info_wraper {
+	position: absolute;
+	width: 290px;
+}
+
+div#list ul:nth-child(2)  li .info_wraper .time {
+	min-width: 50px;
+	height: 50px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+div#list ul:nth-child(2) .last_news {
+	position: absolute;
+	bottom: 0;
+}
+
+div#list ul:nth-child(2) h4 {
+	margin-top: 5px;
+	max-width:180px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+white-space: nowrap;
+
+}
+
+.itemHasNum{
+	width: 20px;
+	height: 20px;
+	background: #F44336;
+	color: #FFFFFF;
+	border: solid #FFFFFF 1px;
+	border-radius: 11px;
+	position: absolute;
+	left: 40px;
+	top: 0;
+	text-align: center;
+	line-height: 20px;
+	font-size: 25px;
+}
+.itemNoNum{
+	width: 12px;
+	height: 12px;
+	background: #F44336;
+	color: #FFFFFF;
+	border: solid #FFFFFF 1px;
+	border-radius: 13px;
+	position: absolute;
+	left: 40px;
+	top: 0;
+	display: inline-block;
+}
+.hasNum{
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	background: #F44336;
+	color: white;
+	border: 1px solid #FFFFFF;
+	border-radius: 10px;
+	position: relative;
+	bottom: 35px;
+	right: 10px;
+	text-align: center;
+	font-size: 15px;
+	line-height: 20px;
+}
+.noNum{
+	width: 12px;
+	height: 12px;
+	background: #F44336;
+	color: white;
+	border: 1px solid #FFFFFF;
+	border-radius: 13px;
+	position: relative;
+	bottom: 35px;
+	right: 10px;
+	display: inline-block;
+}
+ 
+.hideNewsCount{
+	display:none;
+}
+span.last_news{
+		max-width:100px;
+overflow: hidden;
+	text-overflow:ellipsis;
+white-space: nowrap;
+}
